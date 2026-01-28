@@ -109,7 +109,7 @@ export default function Login() {
 }
 
 export async function action({ request, params }) {
-  const URL = import.meta.env.BACKEND_API;
+  const URL = import.meta.env.VITE_BACKEND_API;
   const API_URL = URL || 'http://localhost:8000';
 
   const formData = await request.formData();
