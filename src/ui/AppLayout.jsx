@@ -51,7 +51,7 @@ export default function AppLayout() {
 
 export async function loader() {
   try {
-    const URL = import.meta.env.BACKEND_API;
+    const URL = import.meta.env.VITE_BACKEND_API;
 
     const API_URL = URL || 'http://localhost:8000';
 
