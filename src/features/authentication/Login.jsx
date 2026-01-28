@@ -143,9 +143,10 @@ export async function action({ request, params }) {
     body: JSON.stringify(userData),
   });
 
-  const error = await res.json();
-
-  if (!res.ok) return { general: error.message || 'Email atau password salah' };
+  if (!res.ok) {
+    const error = await res.json();
+    return { general: error.message || 'Email atau password salah' };
+  }
 
   return redirect('/dashboard');
 }
