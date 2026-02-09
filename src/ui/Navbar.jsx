@@ -46,9 +46,11 @@ export default function Navbar({ name, photo, lowStocks }) {
             onClick={() => setIsOpenNotification((prev) => !prev)}
           >
             <Bell size={24} className="cursor-pointer text-gray-500" />
-            <span className="absolute -top-2 -right-2 rounded-full bg-red-400 px-1.5 py-0.5 text-xs text-white">
-              {lowStocks.length}
-            </span>
+            {lowStocks.length > 0 && (
+              <span className="absolute -top-2 -right-2 rounded-full bg-red-400 px-1.5 py-0.5 text-xs text-white">
+                {lowStocks.length}
+              </span>
+            )}
 
             {isOpenNotification && (
               <div className="absolute top-7 right-0 z-50 w-72">
