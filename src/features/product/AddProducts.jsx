@@ -2,7 +2,7 @@ import { useEffect, useReducer, useRef, useState } from 'react';
 import { Loader } from 'lucide-react';
 import SupplierForm from '../supplier/SupplierForm';
 import { useFetcher, useLoaderData } from 'react-router-dom';
-import { getSuppliers } from '../../services/apiSupplier';
+import { getSuppliers, getSuppliersOptions } from '../../services/apiSupplier';
 import { getCategoriesOptions } from '../../services/apiCategory';
 import { getBrands, getBrandsOptions } from '../../services/apiBrands';
 import SuccessModal from '../../ui/SuccessModal';
@@ -43,7 +43,7 @@ const AddProductPage = () => {
     productFetcher.state === 'idle' &&
     productFetcher.data?.status === 'success';
 
-  const supplierOptions = suppliers?.data?.suppliers;
+  const supplierOptions = suppliers?.data;
   const categoryOptions = categories?.data;
   const brandOptions = brands?.data;
 
@@ -488,7 +488,7 @@ const AddProductPage = () => {
 export default AddProductPage;
 
 export async function loader() {
-  const suppliers = await getSuppliers();
+  const suppliers = await getSuppliersOptions();
   const categories = await getCategoriesOptions();
   const brands = await getBrandsOptions();
 

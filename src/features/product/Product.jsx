@@ -12,7 +12,7 @@ import {
   getProducts,
   updateProduct,
 } from '../../services/apiProduct';
-import { getSuppliers } from '../../services/apiSupplier';
+import { getSuppliersOptions } from '../../services/apiSupplier';
 import { getCategoriesOptions } from '../../services/apiCategory';
 import { getBrands, getBrandsOptions } from '../../services/apiBrands';
 import PaginationArrows from '../../ui/PaginationArrows';
@@ -42,7 +42,7 @@ export default function Product() {
     fetcher.state === 'idle' && fetcher.data?.status === 'success';
 
   const currentProducts = products?.data?.products;
-  const supplierOptions = suppliers?.data?.suppliers;
+  const supplierOptions = suppliers?.data;
   const categoryOptions = categories?.data;
   const brandOptions = brands?.data;
 
@@ -181,7 +181,7 @@ export async function loader({ request }) {
   const brand = url.searchParams.get('brand');
 
   const products = await getProducts({ page, name, category, brand });
-  const suppliers = await getSuppliers();
+  const suppliers = await getSuppliersOptions();
   const categories = await getCategoriesOptions();
   const brands = await getBrandsOptions();
 

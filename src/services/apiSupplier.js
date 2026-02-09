@@ -27,6 +27,19 @@ export async function getSuppliers(param = {}) {
   return data;
 }
 
+export async function getSuppliersOptions() {
+  const url = `${API_URL}/suppliers/options`;
+
+  const res = await fetch(url, {
+    credentials: 'include',
+  });
+
+  const data = await res.json();
+  if (!res.ok) throw Error(data.message);
+
+  return data;
+}
+
 export async function createSupplier(body) {
   const res = await fetch(`${API_URL}/suppliers`, {
     method: 'POST',
