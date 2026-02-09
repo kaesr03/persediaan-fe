@@ -16,7 +16,7 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const data = useActionData();
 
-  const isLoading = navigation.state === 'submitting';
+  const isLoading = navigation.state !== 'idle';
 
   return (
     <div
