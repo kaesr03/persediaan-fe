@@ -19,7 +19,7 @@ export default function PaginationArrows({ page, totalPages, onPrev, onNext }) {
 
         <button
           onClick={onNext}
-          disabled={page === totalPages}
+          disabled={page === totalPages || totalPages === 0}
           className="flex h-14 w-14 items-center justify-center rounded-full border border-gray-300 bg-white shadow transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40"
           aria-label="Next page"
         >
