@@ -42,7 +42,9 @@ const ProductForm = ({
   return (
     <div className="bg-opacity-50 fixed inset-0 z-30 h-full w-full overflow-y-auto bg-gray-600">
       <div className="relative top-20 mx-auto w-full max-w-md rounded-md border bg-white p-5 shadow-lg md:max-w-3xl">
-        <Header name="Buat produk baru" />
+        <Header
+          name={method === 'PATCH' ? 'Edit produk' : 'Buat produk baru'}
+        />
         <fetcher.Form
           action={method === 'PATCH' ? `/products/${product._id}` : '/products'}
           method={method}
