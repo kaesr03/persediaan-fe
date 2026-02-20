@@ -1,11 +1,5 @@
 import { Loader } from 'lucide-react';
-import {
-  Form,
-  Link,
-  useActionData,
-  useFetcher,
-  useNavigation,
-} from 'react-router-dom';
+import { Link, useFetcher } from 'react-router-dom';
 
 import backImage from '../../assets/auth-bg.png';
 import SuccessModal from '../../ui/SuccessModal';

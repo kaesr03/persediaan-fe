@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Eye, EyeOff, Loader } from 'lucide-react';
 import {
   Form,
   Link,
   useActionData,
-  redirect,
   useNavigation,
+  useNavigate,
 } from 'react-router-dom';
+
+import SuccessModal from '../../ui/SuccessModal';
 
 import { isEmail, hasMinLength } from '../../utils/validation';
 import backImage from '../../assets/auth-bg.png';
@@ -17,7 +19,21 @@ export default function Login() {
   const [showpasswordConfirm, setShowPasswordConfirm] = useState(false);
   const data = useActionData();
 
+  const navigate = useNavigate();
+
+  const isSuccess = navigation.state === 'idle' && data?.status === 'success';
+
   const isLoading = navigation.state === 'submitting';
+
+  useEffect(() => {
+    if (isSuccess) {
+      const timer = setTimeout(() => {
+        navigate('/login');
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isSuccess, navigate]);
 
   return (
     <div
@@ -142,6 +158,12 @@ export default function Login() {
           </p>
         </div>
       </div>
+
+      <SuccessModal
+        open={isSuccess}
+        message={data?.message}
+        onClose={() => navigate('/login')}
+      />
     </div>
   );
 }
@@ -188,9 +210,7 @@ export async function action({ request, params }) {
     body: JSON.stringify(userData),
   });
 
-  const error = await res.json();
+  const data = await res.json();
 
-  if (!res.ok) return error;
-
-  return redirect('/dashboard');
+  return data;
 }
