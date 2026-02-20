@@ -70,7 +70,7 @@ export default function ForgotPassword() {
       </div>
 
       <SuccessModal
-        forgotPassword
+        auth
         open={isSuccess}
         message={fetcher.data?.message}
         onClose={() => fetcher.reset()}

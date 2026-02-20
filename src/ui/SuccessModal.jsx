@@ -1,17 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
-export default function SuccessModal({
-  open,
-  message,
-  onClose,
-  forgotPassword,
-}) {
+export default function SuccessModal({ open, message, onClose, auth }) {
   let textStyle = 'text-xl font-semibold ';
   let buttonStyle =
     'rounded-lg px-6 py-2 text-sm font-semibold text-white transition focus:ring-2 focus:outline-none ';
 
-  if (forgotPassword) {
+  if (auth) {
     textStyle += 'text-blue-600';
     buttonStyle += 'bg-blue-600 hover:bg-blue-700 focus:ring-blue-400';
   } else {
@@ -63,7 +58,7 @@ export default function SuccessModal({
       >
         <div className="mb-4 flex items-center gap-3">
           <h2 id="success-title" className={textStyle}>
-            {forgotPassword ? 'Sukses' : 'Berhasil'}
+            {auth ? 'Sukses' : 'Berhasil'}
           </h2>
         </div>
 

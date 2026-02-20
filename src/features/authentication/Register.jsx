@@ -160,6 +160,7 @@ export default function Login() {
       </div>
 
       <SuccessModal
+        auth
         open={isSuccess}
         message={data?.message}
         onClose={() => navigate('/login')}
