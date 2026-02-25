@@ -50,8 +50,8 @@ export default function LandingPage() {
             </h2>
             <p className="mt-6 text-lg text-slate-600">
               Aplikasi Web Persediaan Barang Bengkel Dasa Jaya Motor membantu
-              pengelolaan persediaan suku cadang, pencatatan barang masuk dan
-              keluar, serta pemantauan ketersediaan stok untuk mendukung
+              pengelolaan persediaan barang, pencatatan penjualan dan
+              pengeluaran, serta pemantauan ketersediaan stok untuk mendukung
               kegiatan operasional bengkel.
             </p>
             <div className="mt-8 flex gap-4">
