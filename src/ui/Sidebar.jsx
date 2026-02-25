@@ -84,12 +84,12 @@ const Sidebar = () => {
           label="Dashboard"
           isCollapsed={isSidebarCollapsed}
         />
-        <SidebarLink
+        {/* <SidebarLink
           href="/add-product"
           icon={FilePlus}
           label="Tambah produk"
           isCollapsed={isSidebarCollapsed}
-        />
+        /> */}
         <SidebarLink
           href="/products"
           icon={Package}
