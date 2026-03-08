@@ -93,7 +93,7 @@ export default function Login() {
             </button>
           </Form>
 
-          <p className="mt-6 text-center text-sm text-gray-600">
+          {/* <p className="mt-6 text-center text-sm text-gray-600">
             Belum punya akun?
             <Link
               to="/register"
@@ -101,7 +101,7 @@ export default function Login() {
             >
               Register
             </Link>
-          </p>
+          </p> */}
         </div>
       </div>
     </div>

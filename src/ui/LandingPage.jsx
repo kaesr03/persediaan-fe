@@ -26,18 +26,24 @@ export default function LandingPage() {
           </span>
         </h1>
         <div className="flex gap-3">
-          <Link
+          {/* <Link
             to="/login"
             className="rounded-xl px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-200"
           >
             Login
-          </Link>
+          </Link> */}
           <Link
+            to="/login"
+            className="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-indigo-700"
+          >
+            Login
+          </Link>
+          {/* <Link
             to="/register"
             className="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-indigo-700"
           >
             Register
-          </Link>
+          </Link> */}
         </div>
       </header>
 
@@ -55,15 +61,21 @@ export default function LandingPage() {
               kegiatan operasional bengkel.
             </p>
             <div className="mt-8 flex gap-4">
-              <Link
+              {/* <Link
                 to="/register"
                 className="rounded-2xl bg-indigo-600 px-6 py-3 font-medium text-white shadow transition hover:bg-indigo-700"
               >
                 Mulai
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 to="/login"
                 className="rounded-2xl border border-slate-300 px-6 py-3 font-medium text-slate-700 transition hover:bg-slate-200"
+              >
+                Login
+              </Link> */}
+              <Link
+                to="/login"
+                className="rounded-2xl bg-indigo-600 px-6 py-3 font-medium text-white shadow transition hover:bg-indigo-700"
               >
                 Login
               </Link>
