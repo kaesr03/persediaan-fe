@@ -78,12 +78,12 @@ const router = createBrowserRouter([
         path: '/logout',
         action: profileAction,
       },
-      {
-        path: '/register',
-        element: <Register />,
-        errorElement: <Error />,
-        action: registerAction,
-      },
+      // {
+      //   path: '/register',
+      //   element: <Register />,
+      //   errorElement: <Error />,
+      //   action: registerAction,
+      // },
       {
         element: <ForgotPassword />,
         path: '/forgotPassword',
