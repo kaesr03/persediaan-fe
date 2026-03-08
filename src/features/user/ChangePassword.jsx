@@ -145,7 +145,6 @@ export default function ChangePassword() {
 
 export async function action({ request }) {
   const URL = import.meta.env.VITE_BACKEND_API;
-  console.log('ENV di route ini:', import.meta.env.VITE_BACKEND_API);
   const API_URL = URL || 'http://localhost:8000';
 
   const formData = await request.formData();
